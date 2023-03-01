@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
-    "plop": "^3.1.2"
+    "plop": "^3.1.2",
+    "tailwindcss": "^3.2.7"
   }
 }
