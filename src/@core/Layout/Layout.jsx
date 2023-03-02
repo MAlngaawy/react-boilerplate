@@ -1,9 +1,10 @@
 import React from "react";
+import ToolBar from "../Components/Toolbar";
 
 export const Layout = ({ children }) => {
   return (
     <>
-      <nav>This is Navbar</nav>
+      <ToolBar />
       <div>{children}</div>
     </>
   );

@@ -1,13 +1,17 @@
+import { MantineProvider } from "@mantine/core";
+import { BrowserRouter } from "react-router-dom";
 import Layout from "../@core/Layout/Layout";
-import HomePage from "./pages/Home/HomePage";
+import Routes from "./Routes";
 
 function App() {
   return (
-    <Layout>
-      <div className="App">
-        <HomePage />
-      </div>
-    </Layout>
+    <MantineProvider withGlobalStyles withNormalizeCSS>
+      <BrowserRouter>
+        <Layout>
+          <Routes />
+        </Layout>
+      </BrowserRouter>
+    </MantineProvider>
   );
 }
 
