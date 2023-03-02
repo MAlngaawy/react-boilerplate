@@ -2,9 +2,7 @@ import React from "react";
 import Form from "./signupComponents/Form";
 const SignupPage = () => {
   return (
-    <div>
-      <h1>Signup Page</h1>
-      <p>Welcome to the Signup page!</p>
+    <div className="py-10">
       <Form />
     </div>
   );

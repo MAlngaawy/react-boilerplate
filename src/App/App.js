@@ -1,4 +1,5 @@
 import { MantineProvider } from "@mantine/core";
+import { NotificationsProvider } from "@mantine/notifications";
 import { BrowserRouter } from "react-router-dom";
 import Layout from "../@core/Layout/Layout";
 import Routes from "./Routes";
@@ -6,11 +7,13 @@ import Routes from "./Routes";
 function App() {
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
-      <BrowserRouter>
-        <Layout>
-          <Routes />
-        </Layout>
-      </BrowserRouter>
+      <NotificationsProvider>
+        <BrowserRouter>
+          <Layout>
+            <Routes />
+          </Layout>
+        </BrowserRouter>
+      </NotificationsProvider>
     </MantineProvider>
   );
 }
