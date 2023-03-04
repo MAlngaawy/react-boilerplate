@@ -3,10 +3,11 @@ import { useForm } from "@mantine/form";
 import { TextInput, PasswordInput, Loader } from "@mantine/core";
 import axios from "axios";
 import { showNotification } from "@mantine/notifications";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const form = useForm({
     initialValues: {
@@ -39,7 +40,7 @@ const Form = () => {
         setLoading(false);
         form.reset();
         console.log(res);
-        redirect("/");
+        navigate("/");
       })
       .catch((err) => {
         setLoading(false);
