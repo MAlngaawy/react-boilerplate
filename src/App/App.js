@@ -7,7 +7,7 @@ import Routes from "./Routes";
 function App() {
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
-      <NotificationsProvider>
+      <NotificationsProvider autoClose={5000}>
         <BrowserRouter>
           <Layout>
             <Routes />
