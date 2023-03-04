@@ -4,6 +4,7 @@ import { TextInput, PasswordInput, Loader } from "@mantine/core";
 import axios from "axios";
 import { showNotification } from "@mantine/notifications";
 import { useNavigate } from "react-router-dom";
+import { authenticate } from "../../../Auth/authHelpers";
 
 const Form = () => {
   const [loading, setLoading] = useState(false);
@@ -39,8 +40,13 @@ const Form = () => {
       .then((res) => {
         setLoading(false);
         form.reset();
-        console.log(res);
-        navigate("/");
+        authenticate(res, () => {
+          navigate("/");
+          showNotification({
+            message: `Hey ${res.data.user.name}, Welcome Back`,
+            color: "blue",
+          });
+        });
       })
       .catch((err) => {
         setLoading(false);
