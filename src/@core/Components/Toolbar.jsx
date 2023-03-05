@@ -7,13 +7,17 @@ const ToolBar = () => {
   const navigate = useNavigate();
   return (
     <nav className="bg-blue-500 px-6">
-      <ul className="flex gap-4 text-md text-white">
-        <SingleLink to={"/"} text="Home" />
+      <ul className="flex gap-4 text-md text-white justify-between">
+        <div className="flex gap-4">
+          <SingleLink to={"/"} text="Home" />
+          {isAuth() && <SingleLink to={"/profile"} text="Profile" />}
+        </div>
+
         {!isAuth() ? (
-          <>
+          <div className="flex gap-4">
             <SingleLink to={"/signup"} text="Sign Up" />
             <SingleLink to={"/signin"} text="Sign In" />
-          </>
+          </div>
         ) : (
           <li
             className="cursor-pointer px-2 py-3"
