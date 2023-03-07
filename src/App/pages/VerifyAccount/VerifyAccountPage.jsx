@@ -13,12 +13,10 @@ const VerifyAccountPage = () => {
     axios
       .post(`${process.env.REACT_APP_API}/verify-account`, { token })
       .then((res) => {
-        console.log(res);
         showNotification({ message: res.data.message, color: "green" });
         navigate("/signin");
       })
       .catch((err) => {
-        console.log(err);
         showNotification({ message: err.response.data.error, color: "red" });
         navigate("/signup");
       });

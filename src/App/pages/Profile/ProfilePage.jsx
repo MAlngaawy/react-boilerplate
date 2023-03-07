@@ -2,7 +2,6 @@ import React from "react";
 import { isAuth } from "../../Auth/authHelpers";
 const ProfilePage = () => {
   const user = isAuth();
-  console.log(user);
   return (
     <div className="container">
       <div className="flex flex-col py-32 items-center justify-center ">

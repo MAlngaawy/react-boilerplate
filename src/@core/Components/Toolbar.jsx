@@ -11,6 +11,8 @@ const ToolBar = () => {
         <div className="flex gap-4">
           <SingleLink to={"/"} text="Home" />
           {isAuth() && <SingleLink to={"/profile"} text="Profile" />}
+          {isAuth() && <SingleLink to={"/admin"} text="Admin" />}
+          {isAuth() && <SingleLink to={"/subscriber"} text="Subscriber" />}
         </div>
 
         {!isAuth() ? (

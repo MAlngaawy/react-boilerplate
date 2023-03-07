@@ -37,7 +37,6 @@ export const removeLoaclStorage = (key) => {
 
 // Auth user b passing data to cookies and local storage during signin
 export const authenticate = (res, next) => {
-  console.log(res);
   setCookie("token", res.data.token);
   setLoaclStorage("user", res.data.user);
   next();
