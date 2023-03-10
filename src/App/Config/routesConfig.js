@@ -15,16 +15,6 @@ const routesConfig = [
     element: <HomePage />,
     auth: authRoles.All,
   },
-  {
-    path: "/signup",
-    element: <SignupPage />,
-    auth: authRoles.OnlyGuest,
-  },
-  {
-    path: "/signin",
-    element: <SigninPage />,
-    auth: authRoles.OnlyGuest,
-  },
 
   {
     path: "/subscriber",
@@ -41,16 +31,11 @@ const routesConfig = [
     element: <ProfilePage />,
     auth: authRoles.All,
   },
-  {
-    path: "/auth/activate/:token",
-    element: <VerifyAccountPage />,
-    auth: authRoles.All,
-  },
-  {
-    path: "*",
-    element: <NotFoundPage />,
-    auth: authRoles.All,
-  },
+  // {
+  //   path: "/auth/activate/:token",
+  //   element: <VerifyAccountPage />,
+  //   auth: authRoles.All,
+  // },
 ];
 
 export default routesConfig;

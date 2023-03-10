@@ -6,17 +6,20 @@ import { showNotification } from "@mantine/notifications";
 
 const VerifyAccountPage = () => {
   const { token } = useParams();
-  const { name } = jwtDecode(token);
+  const { name } = async () => await jwtDecode(token);
+  console.log(name);
   const navigate = useNavigate();
 
   const ActiveMethod = async () => {
     axios
       .post(`${process.env.REACT_APP_API}/verify-account`, { token })
       .then((res) => {
+        console.log("Doneeeeeee");
         showNotification({ message: res.data.message, color: "green" });
         navigate("/signin");
       })
       .catch((err) => {
+        console.log("Errrrorrrrrrr");
         showNotification({ message: err.response.data.error, color: "red" });
         navigate("/signup");
       });
