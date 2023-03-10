@@ -62,3 +62,16 @@ export const signOut = (next) => {
   removeLoaclStorage("user");
   next();
 };
+
+export const hasPermission = (authArr, userRole) => {
+  if (authArr === null || authArr === undefined) {
+    return true;
+  }
+  if (authArr.length === 0) {
+    return !userRole || userRole.length === 0;
+  }
+  if (userRole && Array.isArray(userRole)) {
+    return authArr.some((r) => userRole.indexOf(r) >= 0);
+  }
+  return authArr.includes(userRole);
+};

@@ -2,6 +2,7 @@ import { MantineProvider } from "@mantine/core";
 import { NotificationsProvider } from "@mantine/notifications";
 import { BrowserRouter } from "react-router-dom";
 import Layout from "../@core/Layout/Layout";
+import AppAuthrization from "./Auth/AppAuthrization";
 import Routes from "./Routes";
 
 function App() {
