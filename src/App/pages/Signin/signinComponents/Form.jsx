@@ -50,7 +50,7 @@ const Form = () => {
       })
       .catch((err) => {
         setLoading(false);
-        showNotification({ message: err.response.data.error, color: "red" });
+        showNotification({ message: "err.response.data.error", color: "red" });
       });
   };
 

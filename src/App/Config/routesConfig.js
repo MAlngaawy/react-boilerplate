@@ -1,13 +1,10 @@
 import React from "react";
-import SignupPage from "../pages/Signup/SignupPage";
 import HomePage from "../pages/Home/HomePage";
-import NotFoundPage from "../pages/NotFound/NotFoundPage";
-import SigninPage from "../pages/Signin/SigninPage";
-import VerifyAccountPage from "../pages/VerifyAccount/VerifyAccountPage";
 import ProfilePage from "../pages/Profile/ProfilePage";
 import AdminPage from "../pages/Admin/AdminPage";
 import SubscriberPage from "../pages/Subscriber/SubscriberPage";
 import authRoles from "../Auth/authRoles";
+import SettingsPage from "../pages/Settings/SettingsPage";
 
 const routesConfig = [
   {
@@ -29,6 +26,11 @@ const routesConfig = [
   {
     path: "/profile",
     element: <ProfilePage />,
+    auth: authRoles.All,
+  },
+  {
+    path: "/settings",
+    element: <SettingsPage />,
     auth: authRoles.All,
   },
   // {
