@@ -7,6 +7,7 @@ import routesConfig from "./Config/routesConfig";
 // import { useRoutes } from "react-router-dom";
 import PrivateRoute from "./Auth/PrivateRoute";
 import VerifyAccountPage from "./pages/VerifyAccount/VerifyAccountPage";
+import ForgetPasswordPage from "./pages/ForgetPassword/ForgetPasswordPage";
 
 function Routes() {
   // const routing = useRoutes(routesConfig);
@@ -24,6 +25,7 @@ function Routes() {
         );
       })}
 
+      <Route path="/auth/forget-password" element={<ForgetPasswordPage />} />
       <Route path="/auth/activate/:token" element={<VerifyAccountPage />} />
       <Route path="/signin" element={<SigninPage />} />
       <Route path="/signup" element={<SignupPage />} />

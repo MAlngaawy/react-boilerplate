@@ -3,7 +3,7 @@ import { useForm } from "@mantine/form";
 import { TextInput, PasswordInput, Loader } from "@mantine/core";
 import axios from "axios";
 import { showNotification } from "@mantine/notifications";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authenticate } from "../../../Auth/authHelpers";
 
 const Form = () => {
@@ -73,6 +73,9 @@ const Form = () => {
           placeholder="Password"
           {...form.getInputProps("password")}
         />
+        <Link to="/auth/forget-password" className="text-blue-500 text-sm my-2">
+          Forget Password
+        </Link>
 
         <button
           className="py-3 w-full rounded-lg bg-blue-500 hover:bg-blue-600 text-white my-4 flex items-center justify-center "
