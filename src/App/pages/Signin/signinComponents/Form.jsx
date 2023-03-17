@@ -5,6 +5,7 @@ import axios from "axios";
 import { showNotification } from "@mantine/notifications";
 import { Link, useNavigate } from "react-router-dom";
 import { authenticate } from "../../../Auth/authHelpers";
+import GoogleButtonComponent from "./GoogleButtonComponent";
 
 const Form = () => {
   const [loading, setLoading] = useState(false);
@@ -85,6 +86,7 @@ const Form = () => {
         >
           {loading ? <Loader size={"sm"} /> : "SignIn"}
         </button>
+        <GoogleButtonComponent />
       </form>
     </div>
   );
