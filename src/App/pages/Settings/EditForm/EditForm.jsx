@@ -54,7 +54,7 @@ const EditForm = () => {
     },
   });
 
-  const updateName = async () => {
+  const updateName = () => {
     console.log("userame", userName);
 
     axios
