@@ -20,7 +20,7 @@ const Form = () => {
     validate: {
       email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
       password: (value) =>
-        value.length < 8 ? "Password must be at least 8 character" : null,
+        value.length < 6 ? "Password must be at least 6 character" : null,
     },
   });
 

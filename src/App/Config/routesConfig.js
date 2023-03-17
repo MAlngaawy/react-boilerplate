@@ -5,6 +5,7 @@ import AdminPage from "../pages/Admin/AdminPage";
 import SubscriberPage from "../pages/Subscriber/SubscriberPage";
 import authRoles from "../Auth/authRoles";
 import SettingsPage from "../pages/Settings/SettingsPage";
+import ChangePasswordPage from "../pages/ChangePassword/ChangePasswordPage";
 
 const routesConfig = [
   {
@@ -31,6 +32,11 @@ const routesConfig = [
   {
     path: "/settings",
     element: <SettingsPage />,
+    auth: authRoles.All,
+  },
+  {
+    path: "/settings/change-password",
+    element: <ChangePasswordPage />,
     auth: authRoles.All,
   },
   // {
