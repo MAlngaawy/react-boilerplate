@@ -3,6 +3,8 @@ import { useForm } from "@mantine/form";
 import { TextInput, PasswordInput, Loader } from "@mantine/core";
 import axios from "axios";
 import { showNotification } from "@mantine/notifications";
+import GoogleButtonComponent from "../../Signin/signinComponents/GoogleButtonComponent";
+import FacebookButtonComponent from "../../Signin/signinComponents/FacebookButtonComponent";
 
 const Form = () => {
   const [loading, setLoading] = useState(false);
@@ -99,6 +101,11 @@ const Form = () => {
         >
           {loading ? <Loader size={"sm"} /> : "Submit"}
         </button>
+        <hr className="my-4 w-60 inline-block" />
+        <div className="flex flex-col gap-2">
+          <GoogleButtonComponent />
+          <FacebookButtonComponent />
+        </div>
       </form>
     </div>
   );

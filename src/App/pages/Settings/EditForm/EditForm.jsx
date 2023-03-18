@@ -72,6 +72,10 @@ const EditForm = () => {
       .then((res) => {
         getUserData();
         setLoaclStorage("user", res.data.user);
+        showNotification({
+          message: "User Updated Successfully",
+          color: "green",
+        });
       })
       .catch((err) => {
         showNotification({ message: "err.response.data.error", color: "red" });

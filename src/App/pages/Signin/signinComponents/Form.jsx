@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useForm } from "@mantine/form";
-import { TextInput, PasswordInput, Loader } from "@mantine/core";
+import { TextInput, PasswordInput, Loader, Divider } from "@mantine/core";
 import axios from "axios";
 import { showNotification } from "@mantine/notifications";
 import { Link, useNavigate } from "react-router-dom";
 import { authenticate } from "../../../Auth/authHelpers";
 import GoogleButtonComponent from "./GoogleButtonComponent";
+import FacebookButtonComponent from "./FacebookButtonComponent";
 
 const Form = () => {
   const [loading, setLoading] = useState(false);
@@ -86,7 +87,11 @@ const Form = () => {
         >
           {loading ? <Loader size={"sm"} /> : "SignIn"}
         </button>
-        <GoogleButtonComponent />
+        <hr className="my-4 w-60 inline-block" />
+        <div className="flex flex-col gap-2">
+          <GoogleButtonComponent />
+          <FacebookButtonComponent />
+        </div>
       </form>
     </div>
   );
