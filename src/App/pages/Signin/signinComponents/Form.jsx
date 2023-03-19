@@ -6,7 +6,7 @@ import { showNotification } from "@mantine/notifications";
 import { Link, useNavigate } from "react-router-dom";
 import { authenticate } from "../../../Auth/authHelpers";
 import GoogleButtonComponent from "./GoogleButtonComponent";
-import FacebookButtonComponent from "./FacebookButtonComponent";
+// import FacebookButtonComponent from "./FacebookButtonComponent";
 
 const Form = () => {
   const [loading, setLoading] = useState(false);
@@ -90,7 +90,7 @@ const Form = () => {
         <hr className="my-4 w-60 inline-block" />
         <div className="flex flex-col gap-2">
           <GoogleButtonComponent />
-          <FacebookButtonComponent />
+          {/* <FacebookButtonComponent /> */}
         </div>
       </form>
     </div>
