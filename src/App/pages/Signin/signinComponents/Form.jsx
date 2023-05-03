@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "@mantine/form";
-import { TextInput, PasswordInput, Loader, Divider } from "@mantine/core";
+import { TextInput, PasswordInput, Loader } from "@mantine/core";
 import axios from "axios";
 import { showNotification } from "@mantine/notifications";
 import { Link, useNavigate } from "react-router-dom";

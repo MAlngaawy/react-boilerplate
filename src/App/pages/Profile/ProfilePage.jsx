@@ -1,10 +1,26 @@
 import React from "react";
-
+import { io } from "socket.io-client";
+import { useEffect, useState } from "react";
 import { isAuth } from "../../Auth/authHelpers";
 import { Link } from "react-router-dom";
 import AppIcons from "../../../@core/AppIcon/AppIcon";
+
+const ENDPOINT = "http://localhost:5000";
+let socket, selectedChatCompare;
+
 const ProfilePage = () => {
   const user = isAuth();
+
+  const [socketConnected, setSocketConnected] = useState(false);
+
+  useEffect(() => {
+    socket = io(ENDPOINT);
+    socket.emit("setup", user);
+    socket.on("connection", () => {
+      setSocketConnected(true);
+    });
+  }, []);
+
   return (
     <div className="container relative">
       <Link

@@ -19,6 +19,7 @@ const EditForm = () => {
   // Fetch the user Data Here
 
   const getUserData = () => {
+    setLoading(true);
     axios
       .get(`${process.env.REACT_APP_API}/user/${isAuth()._id}`, {
         headers: {
@@ -26,10 +27,12 @@ const EditForm = () => {
         },
       })
       .then((res) => {
+        setLoading(false);
         setUserData(res.data);
         setUserName(res.data.name);
       })
       .catch((err) => {
+        setLoading(false);
         if (err.response.status === 401) {
           signOut(() => {
             navigate("/");
@@ -42,7 +45,7 @@ const EditForm = () => {
 
   useEffect(() => {
     getUserData();
-  }, [navigate]);
+  });
 
   const form = useForm({
     // initialValues: { ...userData },
