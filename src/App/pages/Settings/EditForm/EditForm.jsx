@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "@mantine/form";
 import axios from "axios";
 import { showNotification } from "@mantine/notifications";
@@ -43,9 +43,7 @@ const EditForm = () => {
       });
   };
 
-  useEffect(() => {
-    getUserData();
-  });
+  getUserData();
 
   const form = useForm({
     // initialValues: { ...userData },
